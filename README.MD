@@ -4,6 +4,8 @@ This project applies a supervised machine learning workflow in R to model whethe
 
 The goal is to evaluate how well contextual, temporal, and demographic variables predict weapon involvement, and to identify which features contribute most to predictive performance.
 
+A key finding is that the context of the robbery—particularly whether the victim is in a taxi, bus, or metro—strongly relates to whether a weapon is used.
+
 ---
 
 ## Project Motivation
@@ -47,7 +49,7 @@ Each observation represents a reported robbery event and includes:
 - Age
 - Sex
 - Marital status
-- Transport mode
+- Transport mode (taxi, walking, public transit)
 - Neighborhood (grouped)
 - Location type (grouped)
 - Item category
@@ -83,6 +85,12 @@ The model achieves approximately **80% accuracy** on held-out test data.
 - Recall (weapon cases): ~71%  
 - Recall (non-weapon cases): ~86%  
 
+A particularly strong pattern emerges when examining robbery context:
+
+- Taxi: approx. 74% of robberies involve a weapon
+- Bus: approx. 25%
+- Metro: approx. 3%
+
 ## Feature Importance
 
 The figure below shows the relative importance of each feature in the trained model:
@@ -108,3 +116,4 @@ These results suggest that **situational and contextual factors** are more infor
 * The model is not intended for real-time or operational crime prediction
 
 ---
+
