@@ -80,15 +80,21 @@ Each observation represents a reported robbery event and includes:
 
 The model achieves approximately **80% accuracy** on held-out test data.
 
-* Recall (weapon cases): ~71%
-* Recall (non-weapon cases): ~86%
+- Recall (weapon cases): ~71%  
+- Recall (non-weapon cases): ~86%  
 
-Feature importance analysis indicates that:
+## Feature Importance
 
-- **Transport mode** is the strongest predictor of weapon involvement
-- **Time of day** and **location type** contribute significantly
-- **Neighborhood-level variation** is present but less dominant after grouping
-- **Age** has moderate predictive value relative to other demographic variables
+The figure below shows the relative importance of each feature in the trained model:
+
+![Feature Importance](outputs/feature_importance.png)
+
+Feature importance analysis from the random forest model indicates that:
+
+- **Transport mode** is the strongest predictor of weapon involvement  
+- **Time of day** and **location type** contribute significantly  
+- **Neighborhood-level variation** is present but less dominant after grouping  
+- **Age** has moderate predictive value relative to other demographic variables  
 
 These results suggest that **situational and contextual factors** are more informative than static demographic characteristics in predicting weapon use.
 
