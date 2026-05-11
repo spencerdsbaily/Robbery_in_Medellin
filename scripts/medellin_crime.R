@@ -135,7 +135,7 @@ importance_df <- data.frame(
     feature = fct_reorder(feature, importance)
   )
 
-ggplot(importance_df, aes(x = importance, y = feature)) +
+plot <- ggplot(importance_df, aes(x = importance, y = feature)) +
   geom_col(width = 0.72, fill = "#1F4E79") +
   geom_text(aes(label = round(importance, 1)),
             hjust = -0.12, size = 4, color = "#222222") +
@@ -159,3 +159,11 @@ ggplot(importance_df, aes(x = importance, y = feature)) +
     axis.text.x = element_text(size = 11, color = "#222222"),
     plot.margin = ggplot2::margin(15, 20, 15, 15)
   )
+
+ggsave("/Users/daytripperyeahh/Documents/Documents/ongoing_papers/git/Medellin_crime/outputs/feature_importance.png",
+       plot = plot,
+       width = 10, height = 6, dpi = 300)
+
+rob$weapon_numeric <- ifelse(rob$weapon_used == "Yes", 1, 0)
+
+aggregate(weapon_numeric ~ transport_mode, data = rob, mean)
